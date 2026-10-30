@@ -19,7 +19,7 @@ public:
         if(front==-1){
             front=0;
         }
-        arr[++rear]=value;
+        arr[(1+rear)%size]=value;
         cout<<value<<" inserted into queue\n";
     }
     void dequeue(){
@@ -27,7 +27,7 @@ public:
             cout<<"Queue underflow!\n";
         }
         cout<<arr[front]<<" removed \n";
-        front++;
+        (front+1)%size;
         if(front>rear){
             front=rear=-1;
         }
